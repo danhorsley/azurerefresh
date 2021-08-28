@@ -27,3 +27,4 @@ class BookData(models.Model):
     cost = models.FloatField(default = 1.5)
     salepx = models.FloatField(default = 4.0)
     sales90d = models.IntegerField(default = 0)
+    cover = models.CharField(default="Paperback",max_length=20)
