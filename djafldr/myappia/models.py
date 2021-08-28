@@ -16,3 +16,14 @@ class Choice(models.Model):
     votes = models.IntegerField(default=0)
     def __str__(self):
         return self.choice_text
+
+class BookData(models.Model):
+    isbn10 = models.CharField(max_length=10)
+    isbn13 = models.CharField(max_length=10)
+    title = models.CharField(max_length=100)
+    asr = models.IntegerField(default=2000000)
+    stock = models.IntegerField(default=1500)
+    offers = models.IntegerField(default=20)
+    cost = models.FloatField(default = 1.5)
+    salepx = models.FloatField(default = 4.0)
+    sales90d = models.IntegerField(default = 0)
