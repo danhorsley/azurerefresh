@@ -18,9 +18,9 @@ class Choice(models.Model):
         return self.choice_text
 
 class BookData(models.Model):
-    isbn10 = models.CharField(max_length=10)
-    isbn13 = models.CharField(max_length=10)
-    title = models.CharField(max_length=100)
+    isbn10 = models.CharField(max_length=20)
+    isbn13 = models.CharField(max_length=20)
+    title = models.CharField(max_length=200)
     asr = models.IntegerField(default=2000000)
     stock = models.IntegerField(default=1500)
     offers = models.IntegerField(default=20)
