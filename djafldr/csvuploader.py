@@ -2,7 +2,9 @@ from myappia.models import BookData
 import os
 import csv
 
-def bookuploader(): 
+def bookuploader(reset = False): 
+    if reset:
+        BookData.objects.all().delete()  
     counter = 1
     with open("bookuploaddata1.csv", "r") as f:
             reader = csv.reader(f)
@@ -18,7 +20,8 @@ def bookuploader():
                     offers=row[5],
                     cost=row[6],
                     salepx=row[7],
-                    sales90d=row[8]
+                    sales90d=row[8],
+                    cover=row[9]
                 )
                 bd.save()
 
