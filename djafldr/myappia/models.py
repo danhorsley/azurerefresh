@@ -28,3 +28,25 @@ class BookData(models.Model):
     salepx = models.FloatField(default = 4.0)
     sales90d = models.IntegerField(default = 0)
     cover = models.CharField(default="Paperback",max_length=20)
+
+class SalesData(models.Model):
+    xsin = models.CharField(max_length=20) #will link to isbn10 later
+    date = models.DateTimeField()
+    quantity = models.IntegerField(default=0)
+    price = models.FloatField(default=1)
+    salesfees = models.FloatField(default=0)
+    postage = models.FloatField(default=0)
+
+class BookStatic(models.Model):
+    isbn = models.CharField(max_length=10)
+    title1 = models.CharField(max_length=200)
+    datefirstbot = models.DateTimeField()
+
+class InvoiceData(models.Model):
+    isbn13 = models.CharField(max_length=13)
+    quantity = models.IntegerField(default=0)
+    title = models.CharField(max_length=200)
+    cost = models.FloatField(default=1)
+    totalprice = models.FloatField(default=1)
+    date = models.DateTimeField()
+    wholesaler = models.CharField(max_length=1)
