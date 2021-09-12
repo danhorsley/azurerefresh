@@ -1,4 +1,4 @@
-﻿Item,Qty,Title,Cost,Total price,date,wholesaler
+﻿isbn13,Qty,Title,Cost,Total price,date,wholesaler
 9789654941280,25,Biochemical Key,0.25,6.25,11/11/2020,A
 9781785310461,10,Building The Dynasty: Manchester United 1946-1958,0.25,2.5,11/11/2020,A
 9780099543084,10,Bullet Proof,0.25,2.5,11/11/2020,A
@@ -217,6 +217,49 @@
 9781842709481,70,Millie's Marvellous Hat,1.25,87.5,09/02/2021,A
 9781783445394,36,Red Riding Hood,1.25,45,09/02/2021,A
 9781787132535,48,First Knits: 20 Irresistible Knits For Babies,3,144,19/02/2021,A
+9780099477471,20,1 Out Of 10,0.25,5,19/02/2021,A
+9780091778378,40,35MM Handbook,0.25,10,19/02/2021,A
+9781842433201,56,Asian Horror,0.25,14,19/02/2021,A
+9781785310461,20,Building The Dynasty: Manchester United 1946-1958,0.25,5,19/02/2021,A
+9780571278527,16,Death Of A Polaroid - A Manics Family Album,0.25,4,19/02/2021,A
+9781909471580,20,Focused: My Life In Pictures,0.25,5,19/02/2021,A
+9781847672933,56,"For Richer, For Poorer",0.25,14,19/02/2021,A
+9780752449043,30,Glamour In The Skies: The Golden Age of the Air Stewardess,0.25,7.5,19/02/2021,A
+9780352345264,20,Going Too Far,0.25,5,19/02/2021,A
+9780752843803,20,Guardian Columns 1998-2000,0.25,5,19/02/2021,A
+9781906502157,20,Hornchurch Offensive,0.25,5,19/02/2021,A
+9780224075107,28,Jacobs Beach,0.25,7,19/02/2021,A
+9780752455129,24,James Fitzjames - The Mystery Man Of The Franklin Expedition,0.25,6,19/02/2021,A
+9780713684865,20,Jiu Jitsu For All - Brown Belt to Black Belt,0.25,5,19/02/2021,A
+9780091900304,3,Law Of The Playground,0.25,0.75,19/02/2021,A
+9781847390059,10,Life On Mars - The Official Companion,0.25,2.5,19/02/2021,A
+9780099502999,20,Love Against All Odds,0.25,5,19/02/2021,A
+9780099538035,24,Narcomania - How Britain Got Hooked On Drugs,0.25,6,19/02/2021,A
+9781787130326,60,Of Cats & Men: Profiles of History's Great Cat-Loving Arrtists etc.,0.25,15,19/02/2021,A
+9781445638614,20,Oldham Athletic: A Pictorial History,0.25,5,19/02/2021,A
+9781504800129,20,Professional Results: Soft Furnishings,0.25,5,19/02/2021,A
+9781849161732,40,Prometheans,0.25,10,19/02/2021,A
+9780099513650,10,Pursuit,0.25,2.5,19/02/2021,A
+9781846040436,12,Realm Beyond,0.25,3,19/02/2021,A
+9780747596035,40,Red Azalea,0.25,10,19/02/2021,A
+9781848502567,20,Right Time Baby,0.25,5,19/02/2021,A
+9780857331786,10,Rivals: Newcastle United Vs Sunderland (Classic Tyne & Wear Derby Games),0.25,2.5,19/02/2021,A
+9780099598664,20,Roy Of The Rovers: The Official Autobiography,0.25,5,19/02/2021,A
+9781906509293,24,Sarah Raphael,0.25,6,19/02/2021,A
+9781847941329,20,Second Curve: Thoughts On Reinventing Society,0.25,5,19/02/2021,A
+9780571190621,24,Secret Muses - The Life Of Frederick Ashton,0.25,6,19/02/2021,A
+9781848500181,20,Secret Pleasures Of Menopause (uk & europe only),0.25,5,19/02/2021,A
+9780752449845,20,Soldiers Of The Queen,0.25,5,19/02/2021,A
+9780750963985,60,Springer Spaniels,0.25,15,19/02/2021,A
+9781845136628,16,Standing My Ground,0.25,4,19/02/2021,A
+9781408131343,20,Stitching Pictures,0.25,5,19/02/2021,A
+9780980274288,20,Story Of The Fly And How It Could Save The World,0.25,5,19/02/2021,A
+9781472901804,26,Team Handball 101,0.25,6.5,19/02/2021,A
+9780099440734,20,The Book of Colour,0.25,5,19/02/2021,A
+9781787130982,20,Tiny Histories: Trivial Events & Trifling Decisions That Changed British History,0.25,5,19/02/2021,A
+9780224083256,20,Twirlymen,0.25,5,19/02/2021,A
+9781907637094,40,We're The Famous Man Utd: Old Trafford In The 80s- The Players's Stories (Manchester),0.25,10,19/02/2021,A
+9781908041326,20,Why Willows Weep: Contemporary Tales From The Woods,0.25,5,19/02/2021,A
 9781789500066,20,Battle Of The Bulge: Hitler's Final Gamble In Western Europe,2,40,04/03/2021,A
 9781787132535,24,First Knits: 20 Irresistible Knits For Babies,3,72,04/03/2021,A
 9781788280853,20,Ghost Army: Conning The Third Reich,2,40,04/03/2021,A
@@ -304,6 +347,40 @@
 9781905326693,52,Glory Glory! Man Utd In The '90s: The Players' Stoires (Manchester United),2.5,130,18/06/2021,A
 9781848585409,28,Street Art From Around The World,2,56,18/06/2021,A
 9781908041326,29,Why Willows Weep: Contemporary Tales From The Woods,1.5,43.5,18/06/2021,A
+9780091926960,10,3 Commando Brigade,0.25,2.5,18/06/2021,A
+9780091778378,10,35MM Handbook,0.25,2.5,18/06/2021,A
+9780745332031,10,Complacency & Collusion: A Critical Introduction to Business & Financial Journalism,0.25,2.5,18/06/2021,A
+9780224098274,10,Dreamstreets: A Journey Through Britain's Village Utopias,0.25,2.5,18/06/2021,A
+9780091953645,10,Ex-Communication,0.25,2.5,18/06/2021,A
+9780224092357,20,Federer & Me: A Story Of Obsession,0.25,5,18/06/2021,A
+9781909471580,20,Focused: My Life In Pictures,0.25,5,18/06/2021,A
+9781847672933,112,"For Richer, For Poorer",0.25,28,18/06/2021,A
+9780861661848,40,From Hell Companion,0.25,10,18/06/2021,A
+9781909178441,10,Great English Final (Blackpool / Bolton Wanderers),0.25,2.5,18/06/2021,A
+9781905156849,50,Henry Cecil: Trainer Of Genius,0.25,12.5,18/06/2021,A
+9781906502157,40,Hornchurch Offensive,0.25,10,18/06/2021,A
+9781847250179,16,Jew Suss,0.25,4,18/06/2021,A
+9781847390059,49,Life On Mars - The Official Companion,0.25,12.25,18/06/2021,A
+9781849544627,20,Meat Fix,0.25,5,18/06/2021,A
+9781907637575,18,Moz: My Story (Leeds/Warrington/Bradford),0.25,4.5,18/06/2021,A
+9780224100021,16,"Night Games: Sex, Power & A Journey Into The Dark Heart Of Sport",0.25,4,18/06/2021,A
+9780593065778,20,No Expenses Spared,0.25,5,18/06/2021,A
+9781840464184,20,Pendulum Years,0.25,5,18/06/2021,A
+9781847771933,20,PLACE,0.25,5,18/06/2021,A
+9780571196968,20,Planet Of The Blind,0.25,5,18/06/2021,A
+9781848502406,72,Positive Drinking,0.25,18,18/06/2021,A
+9781504800129,60,Professional Results: Soft Furnishings,0.25,15,18/06/2021,A
+9780099513650,10,Pursuit,0.25,2.5,18/06/2021,A
+9780747596035,40,Red Azalea,0.25,10,18/06/2021,A
+9780857331786,40,Rivals: Newcastle United Vs Sunderland (Classic Tyne & Wear Derby Games),0.25,10,18/06/2021,A
+9780224101684,10,Stairwell,0.25,2.5,18/06/2021,A
+9781783521043,10,Ta-Ra-Ra Boom De-Ay: The Dodgy Business of Popular Music,0.25,2.5,18/06/2021,A
+9780099440734,10,The Book of Colour,0.25,2.5,18/06/2021,A
+9781909653146,20,Theory & Practice Of Gamesmanship,0.25,5,18/06/2021,A
+9781787130982,80,Tiny Histories: Trivial Events & Trifling Decisions That Changed British History,0.25,20,18/06/2021,A
+9780571234790,10,Trickster Travels,0.25,2.5,18/06/2021,A
+9781847960368,12,Ugly: The Aesthetics of Everything,0.25,3,18/06/2021,A
+9781907637094,86,We're The Famous Man Utd: Old Trafford In The 80s- The Players's Stories (Manchester),0.25,21.5,18/06/2021,A
 9781849904322,24,Easy Cook Express,2,48,08/07/2021,A
 9781847737526,37,Fun With Stitching,2,74,08/07/2021,A
 9781910254479,36,Upcycling: 20 Creative Projects Made from Reclaimed Materials,3,108,08/07/2021,A
@@ -318,7 +395,7 @@
 9781910254578,5,Nostalgic delights,4.194,20.97,18/12/2020,B
 9780857833150,5,Seriously good gluten free cooking,3.594,17.97,18/12/2020,B
 9781473858848,5,Coal Mine disasters,3.594,17.97,18/12/2020,B
-,3,Georgiana Duchess of Devonshire,2.994,8.982,18/12/2020,B
+9780006550167,3,Georgiana Duchess of Devonshire,2.994,8.982,18/12/2020,B
 9781782494126,5,Romantic English home,5.994,29.97,18/12/2020,B
 9780857836229,2,Diabetes weight loss cook,4.194,8.388,31/12/2020,B
 9781445657875,5,Birmingham's front line,2.394,11.97,31/12/2020,B
