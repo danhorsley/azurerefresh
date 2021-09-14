@@ -35,3 +35,19 @@ class InvoiceData(models.Model):
     totalprice = models.FloatField(default=1)
     date = models.DateTimeField()
     wholesaler = models.CharField(max_length=1)
+
+class DailyData(models.Model):
+    date = models.DateTimeField()
+    isbn10 = models.CharField(max_length=20)
+    itemname = models.CharField(max_length=200)
+    quantity = models.IntegerField(default=0)
+    fulfilment = models.CharField(max_length=20)
+    productsales = models.FloatField(default=0)
+    postagecredits = models.FloatField(default=0)
+    sellingfees = models.FloatField(default=0)
+    fbspfees = models.FloatField(default=0)
+    total = models.FloatField(default=0)
+    isbn13 = models.CharField(max_length=20)
+    cost = models.FloatField(default=0)
+    net_profit = models.FloatField(default=0)
+
