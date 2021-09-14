@@ -6,6 +6,9 @@ from django.http import HttpResponse
 def index(request):
     return HttpResponse("Hello everyone. My app is live")
 
+def homepage(request):
+    return HttpResponse("home page check")
+
 def detail(request, question_id):
     return HttpResponse("You're looking at question %s." % question_id)
 

@@ -2,7 +2,8 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('index/', views.index, name='index'),
+    path('', views.homepage, name='home'),
     # ex: /polls/5/
     #path('<int:question_id>/', views.detail, name='detail'),
     # ex: /polls/5/results/
