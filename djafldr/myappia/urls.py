@@ -3,6 +3,7 @@ from . import views
 
 urlpatterns = [
     path('index/', views.index, name='index'),
+    path('answer/', views.answer, name='answer'),
     path('', views.homepage, name='home'),
     # ex: /polls/5/
     #path('<int:question_id>/', views.detail, name='detail'),

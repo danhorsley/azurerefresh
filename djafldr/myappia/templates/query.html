@@ -59,17 +59,17 @@ article {
   {% csrf_token %}
   
   <div class="flex four" style="width: 800px;height: 250pn">
-  <h4 data-tooltip="ticker of stock" class="tooltip-top"> ticker </h4>
+  <h4 data-tooltip="title" class="tooltip-top"> title </h4>
  
-  <select name="title" id="title">
-    {% for title in titles %}
-    <option value= "{{title}}" SELECTED>{{tiitle}}</option>"
+  <select name="title1" id="title1">
+    {% for title in titles1 %}
+    <option value= "{{title}}" SELECTED>{{title}}</option>"
     {% endfor %}
   </select>
 
   <script>
 var temp = "all titles";
-var mySelect = document.getElementById('title');
+var mySelect = document.getElementById('title1');
 
 for(var i, j = 0; i = mySelect.options[j]; j++) {
     if(i.value == temp) {
