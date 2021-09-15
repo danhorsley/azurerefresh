@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<title>{% block title %}{% endblock %}DB query</title>
+<link rel="stylesheet" href="https://unpkg.com/picnic">
+<style type="text/css" media="screen">
+.myCoolButton {
+  text-align: center;
+    background: #2C3E50;
+    display: inline-block;
+}
+.myErrorButton {
+  text-align: right;
+    background: #C0392B;
+    display: inline-block;
+}
+.mysubButton {
+    background: #3498DB;
+}
+body {text-align: center;
+      background-color: #C0C0C0;
+    }
+form {
+    display: inline-block;
+}
+article {
+    display: inline-block;
+}
+</style>
+<body style="font-family: 'Libre Baskerville', serif">
+<!-- This is a nav bar -->
+
+<div style="overflow: hidden;width: 650px;height: 50px;"> 
+
+<nav  >
+  <a href="index/" class="brand">
+    {% comment %} <img href="home" class="logo" src="static/images/bot.png" /> {% endcomment %}
+    <span>DiscountBooks</span>
+  </a>
+
+
+  <div class="menu">
+    <a href="index/" class="button icon-puzzle">query</a>
+    <a href="index/" class="button icon-puzzle">overview</a>
+    <a href="index/" class="button icon-puzzle">data edit</a>
+    <a href="index/" class="button icon-puzzle">Logout</a>
+  </div>
+</nav>
+</div>
+
+
+  <article align="center" class="card">
+  
+  <header>
+    <h3 align="center" >please select filters</h3>
+  </header>
+  <div align="center" class="flex one" style="width: 800px;height: 250pn">
+  <button class="myCoolButton">please select below...</button>
+  </div>
+  <form align='center' action="/answer/" method='POST'>
+  {% csrf_token %}
+  
+  <div class="flex four" style="width: 800px;height: 250pn">
+  <h4 data-tooltip="ticker of stock" class="tooltip-top"> ticker </h4>
+ 
+  <select name="title" id="title">
+    {% for title in titles %}
+    <option value= "{{title}}" SELECTED>{{tiitle}}</option>"
+    {% endfor %}
+  </select>
+
+  <script>
+var temp = "all titles";
+var mySelect = document.getElementById('title');
+
+for(var i, j = 0; i = mySelect.options[j]; j++) {
+    if(i.value == temp) {
+        mySelect.selectedIndex = j;
+        break;
+    }
+}
+</script>
+
+ 
+  <div class="flex one" style="width: 800px;height: 250pn">
+  <input class='mysubButton' value="-->SUBMIT<--" type="submit" align="center">
+     </div>
+
+  
+</form>
+</article>
+ 
+</body>

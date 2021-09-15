@@ -5,7 +5,8 @@ from datetime import datetime
 
 
 def dateconverter(my_date):
-        return datetime.strptime('2020-11-12 11:21:59+00:00', '%Y-%m-%d %H:%M:%S+00:00')
+        return datetime.strptime(my_date, '%Y-%m-%d %H:%M:%S+00:00')
+#'2020-11-12 11:21:59+00:00'
 def blanker(my_input):
         if my_input == '':
             return 0
