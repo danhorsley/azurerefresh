@@ -9,11 +9,12 @@ def index(request):
 
 def homepage(request):
     title1 = list(set(DailyData.objects.values_list('itemname', flat=True))) #filter1 for title 
-    title2 = [] #filter2 for title
-    time_period = [] #filter for time period
-    measure = [] #quantity or net profit
+    title2 = list(set(DailyData.objects.values_list('itemname', flat=True))) #filter2 for title
+    time_period = ['all time', '30d', '90d', '180d'] #filter for time period
+    measure = ['quantity', 'net profit'] #quantity or net profit
     title1.sort()
     title1 = ['all titles'] + title1
+    title2 = ['all titles'] + title2
 
     return render(request, 'query.html', {'titles1' : title1 , 'titles2' : title2 ,
                                                 'time_period' : time_period,

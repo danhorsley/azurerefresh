@@ -79,6 +79,38 @@ for(var i, j = 0; i = mySelect.options[j]; j++) {
 }
 </script>
 
+<select name="title2" id="title2">
+    {% for title in titles2 %}
+    <option value= "{{title}}" SELECTED>{{title}}</option>"
+    {% endfor %}
+  </select>
+
+  <script>
+var temp = "all titles";
+var mySelect = document.getElementById('title2');
+
+for(var i, j = 0; i = mySelect.options[j]; j++) {
+    if(i.value == temp) {
+        mySelect.selectedIndex = j;
+        break;
+    }
+}
+</script>
+
+<select name="timeperiod" id="timeperiod">
+    {% for tp in time_period %}
+    <option value= "{{tp}}" SELECTED>{{tp}}</option>"
+    {% endfor %}
+  </select>
+
+  <select name="measure" id="measure">
+    {% for measure in measures %}
+    <option value= "{{measure}}" SELECTED>{{measure}}</option>"
+    {% endfor %}
+  </select>
+
+ 
+
  
   <div class="flex one" style="width: 800px;height: 250pn">
   <input class='mysubButton' value="-->SUBMIT<--" type="submit" align="center">
