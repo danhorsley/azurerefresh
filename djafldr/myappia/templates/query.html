@@ -59,7 +59,7 @@ article {
   {% csrf_token %}
   
   <div class="flex four" style="width: 800px;height: 250pn">
-  <h4 data-tooltip="title" class="tooltip-top"> title </h4>
+  <h4 data-tooltip="filter by a title" class="tooltip-top"> title </h4>
  
   <select name="title1" id="title1">
     {% for title in titles1 %}
@@ -79,6 +79,7 @@ for(var i, j = 0; i = mySelect.options[j]; j++) {
 }
 </script>
 
+<h4 data-tooltip="filter by a second title" class="tooltip-top"> title </h4>
 <select name="title2" id="title2">
     {% for title in titles2 %}
     <option value= "{{title}}" SELECTED>{{title}}</option>"
@@ -97,12 +98,15 @@ for(var i, j = 0; i = mySelect.options[j]; j++) {
 }
 </script>
 
+<h4 data-tooltip="period of time you want to analyze" class="tooltip-top"> time period </h4>
 <select name="timeperiod" id="timeperiod">
     {% for tp in time_period %}
     <option value= "{{tp}}" SELECTED>{{tp}}</option>"
     {% endfor %}
   </select>
 
+
+  <h4 data-tooltip="choose quantity sold or net profit" class="tooltip-top"> measure </h4>
   <select name="measure" id="measure">
     {% for measure in measures %}
     <option value= "{{measure}}" SELECTED>{{measure}}</option>"
