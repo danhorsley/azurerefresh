@@ -42,18 +42,21 @@ def answer(request):
     time_dict = {'all_time' : time_max-time_min, 
                 '7d' : timedelta(days = 50), '30d' : timedelta(days = 30),
                 '90d': timedelta(days = 90), '180d': timedelta(days = 180)}
+    measure_dict = {'quantity' : 'quantity', 'net profit' : 'net_profit'}
     #print(title1)
     
     my_filter = DailyData.objects.filter(itemname__contains = title1,
                                 date__range=[dmy(time_max-time_dict[timeperiod]), dmy(time_max)])\
                                 .values('date').order_by('date')\
-                                .annotate(total_profit= Sum('net_profit')).values_list()
-    print(my_filter[0])
+                                .annotate(total_profit= Sum(measure_dict[measure]))\
+                                .values_list()
+    agg_name = f'total_{measure_dict[measure]}'
     my_array = np.core.records.fromrecords(my_filter, 
-                                    names=[f.name for f in DailyData._meta.fields]+['total_profit'])
+                                    names=[f.name for f in DailyData._meta.fields]\
+                                    +[agg_name])
     my_dates = [x.date() for x in my_array['date']]
-    my_plot = go.Figure(data=[go.Bar(x=my_dates, y=my_array['total_profit'])],
-                        layout_title_text=f"sales of {title1[:20]} over time"
+    my_plot = go.Figure(data=[go.Bar(x=my_dates, y=my_array[agg_name])],
+                        layout_title_text=f"{measure} of {title1[:20]} over time"
                         )
     my_plot.update_layout(
     autosize=False,
