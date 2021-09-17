@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.db.models import Count, Sum
-from datetime import datetime
+from django.db.models import Count, Sum, Max, Min
+from datetime import datetime, timedelta
 from .models import DailyData
 import plotly.graph_objects as go
 import plotly.offline as py
@@ -11,6 +11,9 @@ import numpy as np
 def filter_hist(my_date):
     return datetime.strptime(my_date, '%Y-%m-%d %H:%M:%S+00:00').date() 
 
+def dmy(eff):
+    return f'{eff.year}-{eff.month:02d}-{eff.day:02d}'
+
 
 def index(request):
     return HttpResponse("Hello everyone. My app is live")
@@ -18,7 +21,7 @@ def index(request):
 def homepage(request):
     title1 = list(set(DailyData.objects.values_list('itemname', flat=True))) #filter1 for title 
     title2 = list(set(DailyData.objects.values_list('itemname', flat=True))) #filter2 for title
-    time_period = ['all time', '30d', '90d', '180d'] #filter for time period
+    time_period = ['all time', '7d', '30d', '90d', '180d'] #filter for time period
     measure = ['quantity', 'net profit'] #quantity or net profit
     title1.sort()
     title1 = ['all titles'] + title1
@@ -34,11 +37,17 @@ def answer(request):
     title2 = request.POST['title2']
     measure = request.POST['measure']
     timeperiod = request.POST['timeperiod']
+    time_max = DailyData.objects.values().aggregate(Max('date'))['date__max']
+    time_min = DailyData.objects.values().aggregate(Min('date'))['date__min']
+    time_dict = {'all_time' : time_max-time_min, 
+                '7d' : timedelta(days = 50), '30d' : timedelta(days = 30),
+                '90d': timedelta(days = 90), '180d': timedelta(days = 180)}
     #print(title1)
     
-    my_filter = DailyData.objects.filter(itemname__contains = title1)\
-                                    .values('date').order_by('date')\
-                                    .annotate(total_profit= Sum('net_profit')).values_list()
+    my_filter = DailyData.objects.filter(itemname__contains = title1,
+                                date__range=[dmy(time_max-time_dict[timeperiod]), dmy(time_max)])\
+                                .values('date').order_by('date')\
+                                .annotate(total_profit= Sum('net_profit')).values_list()
     print(my_filter[0])
     my_array = np.core.records.fromrecords(my_filter, 
                                     names=[f.name for f in DailyData._meta.fields]+['total_profit'])
