@@ -38,7 +38,7 @@ def answer(request):
     measure = request.POST['measure']
     timeperiod = request.POST['timeperiod']
     
-    html_plot = sales_over_time_chart(measure, timeperiod, title1)
+    html_plot = sales_over_time_chart(measure, timeperiod, title1, timesplit)
     return render(request, 'answer.html', {'sales_chart' : html_plot})
     
 
