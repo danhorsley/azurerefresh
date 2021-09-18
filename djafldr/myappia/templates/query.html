@@ -79,24 +79,12 @@ for(var i, j = 0; i = mySelect.options[j]; j++) {
 }
 </script>
 
-<h4 data-tooltip="filter by a second title" class="tooltip-top"> title </h4>
-<select name="title2" id="title2">
-    {% for title in titles2 %}
-    <option value= "{{title}}" SELECTED>{{title}}</option>"
+<h4 data-tooltip="how to divide time for the period" class="tooltip-top"> time split </h4>
+<select name="timesplit" id="timesplit">
+    {% for ts in timesplit %}
+    <option value= "{{ts}}" SELECTED>{{ts}}</option>"
     {% endfor %}
   </select>
-
-  <script>
-var temp = "all titles";
-var mySelect = document.getElementById('title2');
-
-for(var i, j = 0; i = mySelect.options[j]; j++) {
-    if(i.value == temp) {
-        mySelect.selectedIndex = j;
-        break;
-    }
-}
-</script>
 
 <h4 data-tooltip="period of time you want to analyze" class="tooltip-top"> time period </h4>
 <select name="timeperiod" id="timeperiod">
