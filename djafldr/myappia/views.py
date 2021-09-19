@@ -19,6 +19,9 @@ def dmy(eff):
 def index(request):
     return HttpResponse("Hello everyone. My app is live")
 
+def query2(request):
+    return render(request, 'query2.html')
+
 def homepage(request):
     title1 = list(set(DailyData.objects.values_list('itemname', flat=True))) #filter1 for title 
     timesplit = ['daily', 'by weekday', 'by week', 'by month']
