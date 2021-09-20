@@ -2,40 +2,101 @@
 {% block content %}
 <div id="main">
     <div class="header">
-        <h1>Page Title</h1>
+        <h1>Data Vizualizer</h1>
         <h2>A subtitle for your page goes here</h2>
     </div>
+ 
+    <div class = "mywrapper">
+        
+       
+    <div  class = "box1">
+    <form class="pure-form" action="query2" method='POST'>
+        {% csrf_token %}
+        <span class="pure-form-message" style = "font-size: 110%">Filters</span>
+        <br/>  
+        <select name="title" id="title" style = "width : 200px">
+            {% for title in titles %}
+            <option value= "{{title}}" SELECTED>{{title}}</option>
+            {% endfor %}
+        </select>
+        
+        <script>
+        var temp = "all titles";
+        var mySelect = document.getElementById('title');
+        
+        for(var i, j = 0; i = mySelect.options[j]; j++) {
+            if(i.value == temp) {
+                mySelect.selectedIndex = j;
+                break;
+            }
+        }
+        </script>
+        <br/>  
+        <select name="timesplit" id="timesplit" style = "width : 200px">
+            {% for ts in timesplit %}
+            <option value= "{{ts}}" SELECTED>{{ts}}</option>
+            {% endfor %}
+          </select>
+        <script>
+        var temp = "daily";
+        var mySelect = document.getElementById('timesplit');
+        
+        for(var i, j = 0; i = mySelect.options[j]; j++) {
+            if(i.value == temp) {
+                mySelect.selectedIndex = j;
+                break;
+            }
+        }
+        </script>
+        <br/>  
+        <select name="timeperiod" id="timeperiod" style = "width : 200px">
+            {% for tp in time_period %}
+            <option value= "{{tp}}" SELECTED>{{tp}}</option>
+            {% endfor %}
+        </select>
+        <script>
+            var temp = "all time";
+            var mySelect = document.getElementById('timeperiod');
+            
+            for(var i, j = 0; i = mySelect.options[j]; j++) {
+                if(i.value == temp) {
+                    mySelect.selectedIndex = j;
+                    break;
+                }
+            }
+            </script>
+        <br/>  
+        <select name="measure" id="measure" style = "width : 200px">
+            {% for measure in measures %}
+            <option value= "{{measure}}" SELECTED>{{measure}}</option>
+            {% endfor %}
+        </select>
+        <script>
+            var temp = "net profit";
+            var mySelect = document.getElementById('measure');
+            
+            for(var i, j = 0; i = mySelect.options[j]; j++) {
+                if(i.value == temp) {
+                    mySelect.selectedIndex = j;
+                    break;
+                }
+            }
+            </script>
+     <br/>  
+     <br/>  
+    <button type="submit" class="pure-button pure-button-primary"> Refresh 
+    </button>
+    </form>
+    </div>
+    <div class = "box2">
+        
+        <embed  style = "float : left;" src = {{html_plot|safe}} 
+       
+       </div>
+    
 
-    <div class="content">
-        <h2 class="content-subhead">How to use this layout</h2>
-        <p>
-            To use this layout, you can just copy paste the HTML, along with the CSS in <a href="/layouts/side-menu/styles.css" alt="Side Menu CSS">side-menu.css</a>, and the JavaScript in <a href="/js/ui.js">ui.js</a>. The JS file uses vanilla JavaScript to simply toggle an <code>active</code> class that makes the menu responsive.
-        </p>
-
-        <h2 class="content-subhead">Now Let's Speak Some Latin</h2>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-
-        <div class="pure-g">
-            <div class="pure-u-1-4">
-                <img class="pure-img-responsive" src="http://farm3.staticflickr.com/2875/9069037713_1752f5daeb.jpg" alt="Peyto Lake">
-            </div>
-            <div class="pure-u-1-4">
-                <img class="pure-img-responsive" src="http://farm3.staticflickr.com/2813/9069585985_80da8db54f.jpg" alt="Train">
-            </div>
-            <div class="pure-u-1-4">
-                <img class="pure-img-responsive" src="http://farm6.staticflickr.com/5456/9121446012_c1640e42d0.jpg" alt="T-Shirt Store">
-            </div>
-            <div class="pure-u-1-4">
-                <img class="pure-img-responsive" src="http://farm8.staticflickr.com/7357/9086701425_fda3024927.jpg" alt="Mountain">
-            </div>
-        </div>
-
-        <h2 class="content-subhead">Try Resizing your Browser</h2>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+    
     </div>
 </div>
+
 {% endblock %}
