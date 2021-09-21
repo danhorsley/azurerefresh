@@ -41,6 +41,7 @@ def query2(request):
         default_menus = ['all titles', 'daily', 'all time', 'net profit', 'distinct']
     print(default_menus)
     title = list(set(DailyData.objects.values_list('itemname', flat=True))) #filter1 for title 
+    title = list(set([x[:21] for x in title]))
     timesplit = ['daily', 'by weekday', 'by week', 'by month']
     time_period = ['all time', '7d', '30d', '90d', '180d'] #filter for time period
     measure = ['quantity', 'net profit'] #quantity or net profit
