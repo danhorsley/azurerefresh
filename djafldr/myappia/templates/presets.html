@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<div id="main">
+    <div class="header">
+        <h1>Preset plots</h1>
+        <h2>A look at the larger picture...</h2>
+       
+    </div>
+<div>
+<embed  style = "float : left;" src = {{scatter_plot|safe}} 
+</div>
+{% endblock %}

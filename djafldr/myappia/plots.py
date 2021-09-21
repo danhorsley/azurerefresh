@@ -76,3 +76,18 @@ def sales_over_time_chart(measure='net profit', timeperiod = 'all_time',
     )
     #return py.plot(my_plot, output_type ='div')
     return my_plot.to_html()
+
+def my_scatter():
+    my_data = DailyData.objects.filter(itemname__contains = 'Knits')\
+            .values('itemname')\
+            .annotate(total_profit = Sum('net_profit'))\
+            .order_by('-total_profit')\
+            .values_list()[0:15]
+    
+    my_array = np.core.records.fromrecords(my_data, 
+                                    names=[f.name for f in DailyData._meta.fields]\
+                                     + ['total_profit'])
+    print(my_array['total_profit'], my_array['itemname'])                      
+    my_plot = go.Figure(data=[go.Bar(x=my_array['itemname'],y = my_array['total_profit'])])
+    my_plot.update_layout(autosize = True)
+    return my_plot.to_html()

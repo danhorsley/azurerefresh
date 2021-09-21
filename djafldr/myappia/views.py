@@ -81,4 +81,7 @@ def answer(request):
     html_plot = sales_over_time_chart(measure, timeperiod, title1, timesplit)
     return render(request, 'answer.html', {'sales_chart' : html_plot})
     
+def presets(request):
+    scatter_plot = my_scatter()
+    return render(request, 'presets.html', {'scatter_plot' : scatter_plot})
 
