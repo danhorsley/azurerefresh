@@ -22,21 +22,29 @@ def index(request):
 def query2(request):
     
     try:
+
         if request.POST['timeperiod'] == "all time":
             new_time_period = "all time"
         else:
             new_time_period = f"last {request.POST['timeperiod']}"
         html_plot = sales_over_time_chart(request.POST['measure'], request.POST['timeperiod'],
-                                        request.POST['title'], request.POST['timesplit'])
-        default_sub = f"{request.POST['timesplit'].capitalize()} {request.POST['measure']} of {request.POST['title']} over {new_time_period}"
+                                        request.POST['title'], request.POST['timesplit'],
+                                        request.POST['cumulative'])
+        default_sub = f"""{request.POST['timesplit'].capitalize()} {request.POST['measure']} of
+                             {request.POST['title']} over {new_time_period} ({request.POST['cumulative']})"""
+        default_menus = [request.POST['title'], request.POST['timesplit'],
+                        request.POST['timeperiod'], request.POST['measure'],
+                        request.POST['cumulative']]
     except:
         html_plot = sales_over_time_chart()
         default_sub = "Sales of all titles since inception"
-
+        default_menus = ['all titles', 'daily', 'all time', 'net profit', 'distinct']
+    print(default_menus)
     title = list(set(DailyData.objects.values_list('itemname', flat=True))) #filter1 for title 
     timesplit = ['daily', 'by weekday', 'by week', 'by month']
     time_period = ['all time', '7d', '30d', '90d', '180d'] #filter for time period
     measure = ['quantity', 'net profit'] #quantity or net profit
+    cumulative = ['distinct', 'cumulative']
     title.sort()
     title = ['all titles'] + title
     
@@ -44,8 +52,10 @@ def query2(request):
     return render(request, 'query2.html', {'titles' : title , 'timesplit' : timesplit ,
                                                 'time_period' : time_period,
                                                 'measures' : measure,
+                                                'cumulative' : cumulative,
                                                 'html_plot' : html_plot,
-                                                "default_sub" : default_sub
+                                                "default_sub" : default_sub,
+                                                "default_menus" : default_menus
                                                 })
 
 def homepage(request):

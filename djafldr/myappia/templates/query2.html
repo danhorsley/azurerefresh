@@ -4,6 +4,7 @@
     <div class="header">
         <h1>Data Vizualizer</h1>
         <h2>{{default_sub}}</h2>
+       
     </div>
  
     <div class = "mywrapper">
@@ -21,7 +22,9 @@
         </select>
         
         <script>
-        var temp = "all titles";
+    
+        var temp = "{{ default_menus.0 }}" ;
+      
         var mySelect = document.getElementById('title');
         
         for(var i, j = 0; i = mySelect.options[j]; j++) {
@@ -38,7 +41,7 @@
             {% endfor %}
           </select>
         <script>
-        var temp = "daily";
+        var temp = "{{ default_menus.1 }}" ;
         var mySelect = document.getElementById('timesplit');
         
         for(var i, j = 0; i = mySelect.options[j]; j++) {
@@ -55,7 +58,7 @@
             {% endfor %}
         </select>
         <script>
-            var temp = "all time";
+            var temp = "{{ default_menus.2 }}" ;
             var mySelect = document.getElementById('timeperiod');
             
             for(var i, j = 0; i = mySelect.options[j]; j++) {
@@ -72,7 +75,7 @@
             {% endfor %}
         </select>
         <script>
-            var temp = "net profit";
+            var temp = "{{ default_menus.3 }}" ;;
             var mySelect = document.getElementById('measure');
             
             for(var i, j = 0; i = mySelect.options[j]; j++) {
@@ -83,6 +86,23 @@
             }
             </script>
      <br/>  
+     <select name="cumulative" id="cumulative" style = "width : 200px">
+        {% for cu in cumulative %}
+        <option value= "{{cu}}" SELECTED>{{cu}}</option>
+        {% endfor %}
+    </select>
+    <script>
+        var temp = "{{ default_menus.4 }}" ;;
+        var mySelect = document.getElementById('cumulative');
+        
+        for(var i, j = 0; i = mySelect.options[j]; j++) {
+            if(i.value == temp) {
+                mySelect.selectedIndex = j;
+                break;
+            }
+        }
+        </script>
+ <br/>  
      <br/>  
     <button type="submit" class="pure-button pure-button-primary"> Refresh 
     </button>

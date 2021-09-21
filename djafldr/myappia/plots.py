@@ -14,8 +14,8 @@ def sqldate_to_datetime(my_date):
     return datetime.strptime(my_date, '%Y-%m-%d %H:%M:%S+00:00').date() 
 
 def sales_over_time_chart(measure='net profit', timeperiod = 'all_time', 
-                            title1 = '', my_ts = 'daily'):
-    print(measure, timeperiod, title1, my_ts)
+                            title1 = '', my_ts = 'daily', cumulative = 'distinct'):
+    #print(measure, timeperiod, title1, my_ts)
     time_max = DailyData.objects.values().aggregate(Max('date'))['date__max']
     time_min = DailyData.objects.values().aggregate(Min('date'))['date__min']
 
@@ -25,7 +25,7 @@ def sales_over_time_chart(measure='net profit', timeperiod = 'all_time',
     timeperiod_dict =  {'daily' : 'date', 'by weekday': 'day', 
                         'by week': 'week', 'by month' : 'month'}
     measure_dict = {'quantity' : 'quantity', 'net profit' : 'net_profit'}
-    tick_dict = {'quantity' : ".2", "net profit" : "d"}
+    tick_dict = {'quantity' : "d", "net profit" : ".2"}
 
     
     my_filter = DailyData.objects.filter(itemname__contains = title1,
@@ -49,9 +49,12 @@ def sales_over_time_chart(measure='net profit', timeperiod = 'all_time',
     my_weeks = [int(a) for a in my_array['week']]
     ts_dict =  {'daily' : my_dates, 'by weekday': my_days, 
                         'by week': my_weeks, 'by month' : my_months}
-    my_plot = go.Figure(data=[go.Bar(x=ts_dict[my_ts], y=my_array[agg_name])],
-                        #layout_title_text=f"{measure} of {title1[:20]} over time"
-                        )
+    my_choice = my_array[agg_name]
+    if cumulative == 'distinct':
+        my_plot = go.Figure(data=[go.Bar(x=ts_dict[my_ts], y=my_choice)])
+    else:
+        my_plot = go.Figure(data=[go.Histogram(x=ts_dict[my_ts], 
+                                    y=my_choice, cumulative_enabled=True)])
     my_plot.update_layout(
     autosize=False,
     width=800,
